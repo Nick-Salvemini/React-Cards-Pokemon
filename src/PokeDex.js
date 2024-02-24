@@ -13,19 +13,13 @@ function PokeDex() {
   const [pokemon, setPokemon] = useState([]);
   const [data, addToState] = useAxios();
 
-
   const addPokemon = async name => {
     const response = await addToState(
       `https://pokeapi.co/api/v2/pokemon/${name}/`
     );
     setPokemon(pokemon => [...pokemon, { ...response.data, id: uuid() }]);
   };
-  // const addPokemon = async name => {
-  //   const response = await axios.get(
-  //     `https://pokeapi.co/api/v2/pokemon/${name}/`
-  //   );
-  //   setPokemon(pokemon => [...pokemon, { ...response.data, id: uuid() }]);
-  // };
+
   return (
     <div className="PokeDex">
       <div className="PokeDex-buttons">

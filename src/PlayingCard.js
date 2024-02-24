@@ -5,10 +5,6 @@ import "./PlayingCard.css"
 
 /* Renders a single playing card. */
 function PlayingCard({ front, back = backOfCard }) {
-  // const [isFacingUp, setIsFacingUp] = useState(true);
-  // const flipCard = () => {
-  //   setIsFacingUp(isUp => !isUp);
-  // };
   const [isFacingUp, flipCard] = useFlip()
 
   return (
